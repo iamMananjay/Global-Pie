@@ -6,13 +6,13 @@ import Home from './components/Home';
 import Services from './components/Services';
 import Choose from './components/choose';
 
-import Products from './components/Products';
+// import Products from './components/Products';
 import Contact from './components/Contact';
 import Login from './components/login';
 import Dashboard from './components/Dashboard';
 import AdminCategory from './components/admincategory'; // Import AdminCategory
-import SubcategoryPage from './components/subcategory'; // Import SubcategoryPage
-import ProductPage from './components/Products'; // Import ProductPage
+import Adminsubcategory from './components/adminsubcategory'; // Import SubcategoryPage
+import AdminProducts from './components/adminProducts'; // Import ProductPage
 import CategoryPage from './components/category'; // Import ProductPage
 import ProductDetail from './components/Productdetail'; // Import ProductDetail
 
@@ -54,10 +54,10 @@ function MainApp() {
                         </>
                     }
                 />
-                <Route path="/products" element={<Products />} />
+                {/* <Route path="/products" element={<Products />} /> */}
                 <Route path="/login" element={<Login />} />                   
                  <Route path="/categories/:id" element={<CategoryPage />} />
-                 <Route path="/product/:id" element={<ProductDetail />} /> {/* Add this route */}
+                 <Route path="/product/:productId" element={<ProductDetail />} /> {/* Ensure this is correct */}
 
 
 
@@ -65,8 +65,8 @@ function MainApp() {
                 {/* Protected Routes with Dashboard Layout */}
                 <Route path="/dashboard" element={<Dashboard />}>
                     <Route path="admin/categories" element={<AdminCategory />} />
-                    <Route path="admin/subcategories" element={<SubcategoryPage />} />
-                    <Route path="admin/products" element={<ProductPage />} />
+                    <Route path="admin/subcategories" element={<Adminsubcategory />} />
+                    <Route path="admin/products" element={< AdminProducts/>} />
                 </Route>
             </Routes>
             {shouldShowHeaderFooter && <Footer />}
