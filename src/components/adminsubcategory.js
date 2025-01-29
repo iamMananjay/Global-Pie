@@ -50,7 +50,8 @@ const AdminSubcategory = () => {
     try {
       
       if (editId) {
-        await updateSubcategory(editId, name, categoryId);
+        console.log("update")
+        await updateSubcategory(editId, name, categoryId,image);
         setEditId(null);
       } else {
         await createSubcategory(name, categoryId,image);
@@ -80,9 +81,11 @@ const AdminSubcategory = () => {
 
   // Handle edit subcategory
   const handleEdit = (subcategory) => {
+    console.log(subcategory);
     setEditId(subcategory.id);
     setName(subcategory.name);
     setCategoryId(subcategory.categoryId);
+    setImage(subcategory.image);
   };
 
   return (

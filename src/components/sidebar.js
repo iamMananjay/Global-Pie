@@ -1,7 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate  } from "react-router-dom";
 
 const Sidebar = () => {
+  const navigate = useNavigate();
+
+
+  const handleLogout = () => {
+    // Clear authentication data (adjust based on your auth mechanism)
+    localStorage.removeItem("authToken"); // Remove token or session data
+
+    // Redirect to login page
+    navigate("/login");
+  };
   return (
     <div className="flex flex-col w-64 bg-gray-800 text-white h-screen">
       <div className="flex items-center justify-center py-6">
@@ -47,11 +57,14 @@ const Sidebar = () => {
         {/* Spacer to push Logout down */}
         <div className="flex-grow"></div>
 
-        {/* Logout Section */}
-        <div className="py-4">
-          <Link to="/logout" className="text-white hover:text-red-400">
+         {/* Logout Button */}
+         <div className="py-4">
+          <button
+            onClick={handleLogout}
+            className="w-full text-left text-white hover:text-red-400"
+          >
             Logout
-          </Link>
+          </button>
         </div>
       </nav>
     </div>
