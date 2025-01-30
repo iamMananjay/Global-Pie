@@ -15,9 +15,7 @@ const CategoryPage = () => {
     useEffect(() => {
         const fetchCategory = async () => {
             try {
-                console.log(id);
                 const data = await getAllSubcategoriesSection(id); // Fetch the category by its ID
-                console.log(data);
                 setCategory(data); // Set the fetched category data
                 setLoading(false); // Set loading to false once data is fetched
             } catch (err) {

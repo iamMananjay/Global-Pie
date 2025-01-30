@@ -22,7 +22,6 @@ export const createProduct = async (formData) => {
 export const getAllProducts = async () => {
     try {
         const response = await axios.get(Products);
-        console.log(response.data);
         return response.data;
     } catch (error) {
         throw new Error('Error fetching products:', error);
@@ -33,7 +32,6 @@ export const getAllProducts = async () => {
 export const getProductById = async (productId) => {
     try {
         const response = await axios.get(`${Products}/${productId}`);
-         console.log(response.data);
         return response.data;
     } catch (error) {
         throw new Error('Error fetching product:', error);

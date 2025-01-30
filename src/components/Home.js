@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import bgimg from '../images/backgroundimg.png';
+import bgimg from '../images/bg.png';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import "../Home.css"; // Import the CSS file
+
 
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -52,8 +54,31 @@ const Home = () => {
         
       }}
     ></div>
-
     <div
+    className="welcome-box"
+  style={{
+    position: "absolute",
+    top: "40%", // Moves the div 40% down from the top
+    left: "50%", // Centers horizontally
+    // transform: "translate(-50%, -50%)", // Adjusts positioning correctly
+    zIndex: 2,
+    textAlign: "center",
+    color: "white",
+    padding: "20px",
+    backgroundColor: "rgb(34 84 137 / 60%)",
+    borderRadius: "10px",
+    maxWidth: "800px",
+    fontSize: "bold",
+    
+  }}
+>
+  <h1 style={{ fontSize: "20px", fontWeight: "bold" }}>
+    Welcome to Global Pie Import & Export
+  </h1>
+</div>
+
+
+    {/* <div
       style={{
         position: "relative",
         zIndex: 2,
@@ -67,12 +92,11 @@ const Home = () => {
         fontSize:"bold"
       }}
     >
-      {/* marginBottom: "210px" */}
       <h1 style={{ fontSize: "20px",  fontWeight: "bold" }}>
         Welcome to Global Pie Import & Export
       </h1>
     
-    </div>
+    </div> */}
   </section>
 </div>
 

@@ -21,7 +21,6 @@ const Services = () => {
     const fetchCategories = async () => {
       try {
         const data = await getAllCategories(); // Fetch data from API
-        console.log(data);
         setCategories(data); // Set the categories in the state
       } catch (error) {
         console.error("Error fetching categories:", error);

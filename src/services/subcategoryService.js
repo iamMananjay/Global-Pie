@@ -4,9 +4,7 @@ import { SUBCATEGORY } from "../api/api"; // Adjust the import path as needed
 // Fetch all subcategories
 export const getAllSubcategories = async () => {
   try {
-    console.log("ok")
     const response = await axios.get(SUBCATEGORY);
-    console.log(response.data);
     return response.data;
   } catch (error) {
     console.error("Error fetching subcategories:", error);
@@ -16,9 +14,7 @@ export const getAllSubcategories = async () => {
 
 export const getAllSubcategoriesSection = async (categoryId) => {
     try {
-      console.log("Fetching subcategories for category:", categoryId);
       const response = await axios.get(`${SUBCATEGORY}/${categoryId}/subcategories`);
-      console.log("under")
       return response.data; // This should return only the subcategories for the given category
     } catch (error) {
       console.error("Error fetching subcategories:", error);
@@ -50,7 +46,6 @@ export const createSubcategory = async (name, categoryId, image) => {
         console.error("No image selected");
     }
   
-    console.log(formData);
 
     try {
       const response = await axios.post(SUBCATEGORY, formData, {
