@@ -1,15 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { createContact } from "../services/contactService";
 
 const Contact = () => {
     const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        address: '',
-        subject: '',
-        message: '',
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        address: "",
+        subject: "",
+        message: "",
     });
+
+    const [loading, setLoading] = useState(false);
+    const [success, setSuccess] = useState(null);
+    const [error, setError] = useState(null);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -19,17 +24,40 @@ const Contact = () => {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(formData);
+        setLoading(true);
+        setSuccess(null);
+        setError(null);
+
+        try {
+            const response = await createContact(formData);
+            setSuccess(response.message || "Message sent successfully!");
+            setFormData({
+                firstName: "",
+                lastName: "",
+                email: "",
+                phone: "",
+                address: "",
+                subject: "",
+                message: "",
+            });
+        } catch (err) {
+            setError("Failed to send message. Please try again.");
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
         <section id="contact" className="bg-gray-900 text-white py-16 md:py-24">
             <div className="container mx-auto text-center mb-12">
-                <h1 className="text-4xl font-bold mb-4">Let's Discuss Your Next Import or Export</h1>
+                <h1 className="text-4xl font-bold mb-4">
+                    Let's Discuss Your Next Import or Export
+                </h1>
                 <p className="text-lg mb-8">
-                    Fill out the form below, or call us to set up a purchase. We will work with you to design a customized import or export plan that fits your budget and goals.
+                    Fill out the form below, or call us to set up a purchase. We will work with you to
+                    design a customized import or export plan that fits your budget and goals.
                 </p>
                 <div className="text-lg font-semibold">Global Pie Import & Export Limited</div>
                 <div className="mt-2 text-purple-400">info@globalpieimportexport.com</div>
@@ -37,10 +65,15 @@ const Contact = () => {
             </div>
 
             <div className="max-w-3xl mx-auto bg-black p-8 rounded-lg shadow-xl transform transition-all duration-500 hover:scale-105">
+                {success && <p className="text-green-500 text-center mb-4">{success}</p>}
+                {error && <p className="text-red-500 text-center mb-4">{error}</p>}
+
                 <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="flex flex-col">
-                            <label htmlFor="firstName" className="text-lg">First Name</label>
+                            <label htmlFor="firstName" className="text-lg">
+                                First Name
+                            </label>
                             <input
                                 type="text"
                                 id="firstName"
@@ -53,7 +86,9 @@ const Contact = () => {
                         </div>
 
                         <div className="flex flex-col">
-                            <label htmlFor="lastName" className="text-lg">Last Name</label>
+                            <label htmlFor="lastName" className="text-lg">
+                                Last Name
+                            </label>
                             <input
                                 type="text"
                                 id="lastName"
@@ -68,7 +103,9 @@ const Contact = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="flex flex-col">
-                            <label htmlFor="email" className="text-lg">Email</label>
+                            <label htmlFor="email" className="text-lg">
+                                Email
+                            </label>
                             <input
                                 type="email"
                                 id="email"
@@ -81,7 +118,9 @@ const Contact = () => {
                         </div>
 
                         <div className="flex flex-col">
-                            <label htmlFor="phone" className="text-lg">Phone</label>
+                            <label htmlFor="phone" className="text-lg">
+                                Phone
+                            </label>
                             <input
                                 type="text"
                                 id="phone"
@@ -95,7 +134,9 @@ const Contact = () => {
                     </div>
 
                     <div className="flex flex-col">
-                        <label htmlFor="address" className="text-lg">Address</label>
+                        <label htmlFor="address" className="text-lg">
+                            Address
+                        </label>
                         <input
                             type="text"
                             id="address"
@@ -108,7 +149,9 @@ const Contact = () => {
                     </div>
 
                     <div className="flex flex-col">
-                        <label htmlFor="subject" className="text-lg">Subject</label>
+                        <label htmlFor="subject" className="text-lg">
+                            Subject
+                        </label>
                         <input
                             type="text"
                             id="subject"
@@ -121,7 +164,9 @@ const Contact = () => {
                     </div>
 
                     <div className="flex flex-col">
-                        <label htmlFor="message" className="text-lg">Type your message here...</label>
+                        <label htmlFor="message" className="text-lg">
+                            Type your message here...
+                        </label>
                         <textarea
                             id="message"
                             name="message"
@@ -137,8 +182,9 @@ const Contact = () => {
                         <button
                             type="submit"
                             className="px-8 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition duration-300"
+                            disabled={loading}
                         >
-                            Send Message
+                            {loading ? "Sending..." : "Send Message"}
                         </button>
                     </div>
                 </form>

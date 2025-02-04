@@ -1,13 +1,19 @@
 import React from "react";
 import { Link,useNavigate  } from "react-router-dom";
+import { useAuth } from '../context/AuthContext';
+
 
 const Sidebar = () => {
   const navigate = useNavigate();
+  const { logout } = useAuth();
+
 
 
   const handleLogout = () => {
     // Clear authentication data (adjust based on your auth mechanism)
-    localStorage.removeItem("authToken"); // Remove token or session data
+    localStorage.removeItem("token"); // Remove token or session data
+    localStorage.removeItem("role"); // Remove token or session data
+
 
     // Redirect to login page
     navigate("/login");
