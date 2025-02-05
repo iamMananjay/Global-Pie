@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate,matchPath  } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './components/Home';
@@ -50,10 +50,8 @@ function MainApp() {
         '/dashboard/admin/categories',
         '/dashboard/admin/subcategories',
         '/dashboard/admin/products',
-    ].some((route) => {
-        const routePattern = new RegExp(`^${route.replace(/:\w+/g, '\\w+')}$`);
-        return routePattern.test(location.pathname);
-    });
+    ].some((route) => matchPath(route, location.pathname));
+ 
 
     // Conditionally render Navbar and Footer
     const shouldShowHeaderFooter = !excludedRoutes.includes(location.pathname) && isValidRoute;
