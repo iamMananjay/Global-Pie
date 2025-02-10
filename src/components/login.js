@@ -19,12 +19,13 @@ const Login = () => {
       const credentials = { email, password };
       const responseMessage = await loginUser(credentials); // Call the login service
 
-      console.log(responseMessage); // Log success message for debugging
 
       if (responseMessage.token) {
         localStorage.setItem('token', responseMessage.token);
         localStorage.setItem('role', responseMessage.userRole);
-        navigate('/dashboard');
+
+       
+        window.location.href = '/dashboard';
       } else {
         setError(responseMessage.message);
       }
@@ -57,6 +58,7 @@ const Login = () => {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              autoComplete="new-password"  // Forces no autofill for email
               required
               className="w-full px-4 py-2 mt-1 text-sm border rounded focus:ring focus:ring-blue-300 focus:outline-none"
               placeholder="Enter your email"

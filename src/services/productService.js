@@ -5,7 +5,6 @@ import { Products } from '../api/api'; // Import the login API URL
 
 // Create Product
 export const createProduct = async (formData) => {
-    console.log(formData);
     try {
         const response = await axios.post(Products, formData, {
             headers: {

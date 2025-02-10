@@ -52,10 +52,10 @@ const Footer = () => {
                 {/* Copyright and Credits */}
                 <div className="text-center">
                     <p className="text-sm font-medium mb-2">
-                        &copy; {new Date().getFullYear()} Global Pie Import & Export Ltd. All rights reserved.
+                        &copy; 2024 Global Pie Import & Export Ltd. All rights reserved.
                     </p>
                     <p className="text-xs">
-                        Designed and Developed by <a href="https://yourwebdeveloper.com" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline">Your Web Developer</a>
+                        Designed and Developed by <a href="https://www.linkedin.com/in/mananjay-shrestha-5760b4220/" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline">Mananjay Shrestha</a>
                     </p>
                 </div>
             </div>

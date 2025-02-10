@@ -165,7 +165,7 @@ const Contact = () => {
 
                     <div className="flex flex-col">
                         <label htmlFor="message" className="text-lg">
-                            Type your message here...
+                            Type your message/order here....
                         </label>
                         <textarea
                             id="message"

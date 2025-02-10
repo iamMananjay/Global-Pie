@@ -69,7 +69,6 @@ export const updateSubcategory = async (id, name, categoryId, image) => {
     if (image) {
       formData.append("image", image); // Add image to form data if it's provided
     }
-    console.log(formData);
   
     try {
       const response = await axios.put(`${SUBCATEGORY}/${id}`, formData, {

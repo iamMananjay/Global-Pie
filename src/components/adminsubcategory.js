@@ -20,7 +20,6 @@ const AdminSubcategory = () => {
     try {
       
       const data = await getAllSubcategories();
-      console.log("Subcategories Data:", data); // Log the fetched data
       if (Array.isArray(data)) {
         setSubcategories(data); // Only set it if it's an array
       } else {
@@ -37,7 +36,6 @@ const AdminSubcategory = () => {
   const fetchCategories = async () => {
     try {
       const data = await getAllCategories(); // Fetch categories from the API
-       console.log(data);
       setCategories(data);
     } catch (error) {
       console.error("Error fetching categories:", error);
@@ -50,7 +48,6 @@ const AdminSubcategory = () => {
     try {
       
       if (editId) {
-        console.log("update")
         await updateSubcategory(editId, name, categoryId,image);
         setEditId(null);
       } else {
@@ -81,7 +78,6 @@ const AdminSubcategory = () => {
 
   // Handle edit subcategory
   const handleEdit = (subcategory) => {
-    console.log(subcategory);
     setEditId(subcategory.id);
     setName(subcategory.name);
     setCategoryId(subcategory.categoryId);

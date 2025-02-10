@@ -2,7 +2,6 @@
 import { LOGIN_URL } from '../api/api'; // Import the login API URL
 
 export const loginUser = async (credentials) => {
-    console.log(credentials);
   try {
       const response = await fetch(LOGIN_URL, {
           method: "POST",

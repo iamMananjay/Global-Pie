@@ -14,7 +14,6 @@ import AdminProducts from './components/adminProducts';
 import CategoryPage from './components/category';
 import ProductDetail from './components/Productdetail';
 import { AuthProvider } from './context/AuthContext';
-import ProtectedRoute from './components/ProtectedRoute';
 import NotFound from './components/NotFound'; // Import a custom 404 component
 import './App.css';
 
@@ -81,9 +80,7 @@ function MainApp() {
                 <Route
                     path="/dashboard"
                     element={
-                        <ProtectedRoute>
                             <Dashboard />
-                        </ProtectedRoute>
                     }
                 >
                     <Route path="admin/categories" element={<AdminCategory />} />
