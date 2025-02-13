@@ -1,74 +1,94 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <!-- Character Encoding & Rendering -->
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     
     <!-- Primary Meta Tags -->
-    <title>Global Pie | Seamless Import/Export Solutions | International Trade Experts</title>
-    <meta name="title" content="Global Pie | Seamless Import/Export Solutions | International Trade Experts">
-    <meta name="description" content="Global Pie simplifies global trade with end-to-end import/export solutions. Connect with verified international partners, manage logistics, and streamline cross-border transactions with our secure platform.">
-    <meta name="keywords" content="import export business, global trade platform, international logistics, customs clearance, freight forwarding, cross-border trade, supply chain management, trade finance solutions, international business partners, wholesale trade platform">
-    <meta name="author" content="Global Pie International Trade Solutions">
-    <meta name="robots" content="index, follow">
-    <meta name="content-language" content="en">
-
+    <title>Global Pie Import Export | International Trade Platform & Logistics Solutions</title>
+    <meta name="description" content="Global Pie: Your end-to-end import/export solution. Connect with verified trade partners, streamline logistics, and manage cross-border transactions securely. 150+ countries supported.">
+    <meta name="keywords" content="import export platform, global trade solutions, international logistics, customs brokerage, freight forwarding, trade finance, cross-border ecommerce, wholesale marketplace, supply chain management, trade compliance">
+    <meta name="author" content="Global Pie International Trade Solutions Ltd">
+    
+    <!-- SEO & Indexing -->
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="revisit-after" content="7 days">
+    <link rel="canonical" href="https://www.globalpieimportexport.com/" />
+    
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.globalpie.com/">
-    <meta property="og:title" content="Global Pie | Seamless Import/Export Solutions | International Trade Experts">
-    <meta property="og:description" content="Global Pie simplifies global trade with end-to-end import/export solutions. Connect with verified international partners, manage logistics, and streamline cross-border transactions with our secure platform.">
-    <meta property="og:image" content="%PUBLIC_URL%/og-global-trade.jpg">
+    <meta property="og:url" content="https://www.globalpieimportexport.com/">
+    <meta property="og:title" content="Global Pie | International Trade Platform & Logistics Solutions">
+    <meta property="og:description" content="End-to-end import/export platform connecting businesses worldwide. Customs clearance, logistics, and trade finance solutions.">
+    <meta property="og:image" content="https://www.globalpieimportexport.com/images/og-global-trade-1200x630.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_GB">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://www.globalpie.com/">
-    <meta property="twitter:title" content="Global Pie | Seamless Import/Export Solutions | International Trade Experts">
-    <meta property="twitter:description" content="Global Pie simplifies global trade with end-to-end import/export solutions. Connect with verified international partners, manage logistics, and streamline cross-border transactions with our secure platform.">
-    <meta property="twitter:image" content="%PUBLIC_URL%/twitter-global-trade.jpg">
+    <meta property="twitter:creator" content="@globalpie_trade">
+    <meta property="twitter:site" content="@globalpie_trade">
+    <meta property="twitter:image" content="https://www.globalpieimportexport.com/images/twitter-card-800x418.jpg">
 
-    <!-- Theme Color -->
-    <meta name="theme-color" content="#1A237E">
-    <meta name="msapplication-navbutton-color" content="#1A237E">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#1A237E">
+    <!-- PWA Configuration -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="./android-chrome-512x512.png">
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Global Pie">
 
-    <!-- Preconnect to External Services -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Theme & Browser Configuration -->
+    <meta name="theme-color" content="#1A237E" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0d47a1" media="(prefers-color-scheme: dark)">
+    <meta name="msapplication-TileColor" content="#1A237E">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+
+    <!-- Preloading & Performance -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" as="style" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Manifest -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="dns-prefetch" href="//cdn.globalpieimportexport.com">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
+      "@type": ["Organization", "WebSite"],
       "name": "Global Pie",
-      "url": "https://www.globalpie.com",
-      "logo": "https://www.globalpie.com/logo.png",
-      "description": "International Trade and Logistics Solutions Provider",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "123 Trade Tower",
-        "addressLocality": "London",
-        "addressRegion": "UK",
-        "postalCode": "EC1A 1AA",
-        "addressCountry": "UK"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+44-1234-567890",
-        "contactType": "customer service"
+      "url": "https://www.globalpieimportexport.com",
+      "logo": "https://www.globalpieimportexport.com/images/logo-600x60.png",
+      "description": "International Trade Platform & Logistics Solutions Provider",
+      "foundingDate": "2020",
+      "sameAs": [
+        "https://linkedin.com/company/globalpie",
+        "https://twitter.com/globalpie_trade"
+      ],
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.globalpieimportexport.com/search?q={search_term}",
+        "query-input": "required name=search_term"
       }
     }
     </script>
   </head>
   <body>
     <noscript>
-      <strong>Enable JavaScript to access Global Pie's full suite of international trade tools and marketplace features.</strong>
+      <div class="noscript-warning">
+        <h2>JavaScript Required</h2>
+        <p>For full functionality of Global Pie's international trade platform, please enable JavaScript in your browser settings.</p>
+        <p>Learn how to enable JavaScript: 
+          <a href="https://www.enable-javascript.com/" target="_blank" rel="noopener">Enable JavaScript Guide</a>
+        </p>
+      </div>
     </noscript>
     <div id="root"></div>
+    
+    <!-- Fallback Content -->
+    <div class="browser-support" hidden>
+      <p>Your browser is outdated! Please update to a modern browser for the best Global Pie experience.</p>
+    </div>
   </body>
 </html>

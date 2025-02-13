@@ -77,26 +77,6 @@ const Home = () => {
   </h1>
 </div>
 
-
-    {/* <div
-      style={{
-        position: "relative",
-        zIndex: 2,
-        textAlign: "center",
-        color: "white",
-        padding: "20px",
-        backgroundColor: "rgb(34 84 137 / 60%)", 
-        borderRadius: "10px",
-        maxWidth: "800px",
-        marginBottom:"200px",
-        fontSize:"bold"
-      }}
-    >
-      <h1 style={{ fontSize: "20px",  fontWeight: "bold" }}>
-        Welcome to Global Pie Import & Export
-      </h1>
-    
-    </div> */}
   </section>
 </div>
 

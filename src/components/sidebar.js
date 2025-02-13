@@ -13,6 +13,8 @@ const Sidebar = () => {
     // Clear authentication data (adjust based on your auth mechanism)
     localStorage.removeItem("token"); // Remove token or session data
     localStorage.removeItem("role"); // Remove token or session data
+    localStorage.removeItem("captchaVerified");
+
 
 
     // Redirect to login page
